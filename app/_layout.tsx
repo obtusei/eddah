@@ -28,6 +28,13 @@ export default function RootLayout() {
             presentation: "modal",
           }}
         />
+        <Stack.Screen
+          name="search/index"
+          options={{
+            headerShown: false,
+            presentation: "modal",
+          }}
+        />
 
         <Stack.Screen
           name="notifications/index"
