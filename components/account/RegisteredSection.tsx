@@ -143,8 +143,7 @@ export default function RegisteredSection({ user }: { user: any }) {
             </View>
           )}
 
-          {user?.data.communitiesFollowed.length > 0 && <ScrollCard />}
-          {user?.data.communitiesFollowed.length > 0 && (
+          {user?.data.Rescues.length > 0 && (
             <View
               style={{
                 flex: 1,
@@ -161,8 +160,13 @@ export default function RegisteredSection({ user }: { user: any }) {
               >
                 contributions
               </Text>
-              {[1, 2, 3, 4].map((item, index) => (
-                <ContributionCard key={index} />
+              {user.data.Rescues.map((item, index) => (
+                <ContributionCard
+                  image={item.image}
+                  status={item.status}
+                  id={item.id}
+                  key={index}
+                />
               ))}
             </View>
           )}

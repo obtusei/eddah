@@ -1,7 +1,15 @@
 import React from "react";
 import { Image, Text, View } from "react-native";
 
-function ContributionCard() {
+function ContributionCard({
+  image,
+  status,
+  id,
+}: {
+  image: string;
+  status: string;
+  id: string;
+}) {
   return (
     <View
       style={{
@@ -14,7 +22,8 @@ function ContributionCard() {
       }}
     >
       <Image
-        source={require("../../assets/icon.png")}
+        source={image ? { uri: image } : require("../../assets/icon.png")}
+        defaultSource={require("../../assets/icon.png")}
         style={{
           width: 80,
           height: 80,
@@ -31,24 +40,18 @@ function ContributionCard() {
           style={{
             fontSize: 14,
           }}
-        >
-          john dolittle
-        </Text>
+        ></Text>
         <Text
           style={{
             fontSize: 12,
           }}
-        >
-          age:02
-        </Text>
+        ></Text>
         <Text
           style={{
             fontSize: 10,
             color: "gray",
           }}
-        >
-          from sneha'scare
-        </Text>
+        ></Text>
       </View>
       <Text
         style={{
@@ -56,7 +59,7 @@ function ContributionCard() {
           color: "green",
         }}
       >
-        rescued
+        {status}
       </Text>
     </View>
   );
